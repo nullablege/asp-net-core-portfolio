@@ -1,5 +1,3 @@
-<img width="3412" height="1217" alt="image" src="https://github.com/user-attachments/assets/09a7c9b3-bdb0-4450-9d49-134cc576ddc0" /># PortfolioTask1 - Dinamik Portfolyo Projesi
-
 Bu proje, M&Y Akademi Full Stack Bootcamp kapsamında geliştirilmiş bir ASP.NET Core MVC uygulamasıdır. Proje, "Clark" adlı bir web şablonunu dinamik hale getirerek, tüm içeriğin bir yönetici paneli üzerinden veritabanı aracılığıyla yönetilmesini sağlayan bir kişisel portfolyo sitesidir.
 
 ## Proje Hakkında
@@ -100,4 +98,4 @@ Uygulama içi görseller :
 <img width="3418" height="1221" alt="image" src="https://github.com/user-attachments/assets/432af253-7204-44fc-93b9-104f3d004421" />
 <img width="3421" height="1221" alt="image" src="https://github.com/user-attachments/assets/e1762694-0cef-4454-96e4-f1db1108cd1e" />
 <img width="3417" height="1222" alt="image" src="https://github.com/user-attachments/assets/2a801aac-ceee-400b-9ed2-2082c80e6a6c" />
-
+<img width="3412" height="1217" alt="image" src="https://github.com/user-attachments/assets/09a7c9b3-bdb0-4450-9d49-134cc576ddc0" /># PortfolioTask1 - Dinamik Portfolyo Projesi
