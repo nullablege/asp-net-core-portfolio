@@ -1,0 +1,84 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Genel
+
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h1 class="big big-2">İletişim</h1>
+                <h2 class="mb-4">Ulaş Bana</h2>
+                <p>İş Birliğimiz için benimle iletişime geçin.</p>
+            </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box p-4 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-map-signs"></span>
+                    </div>
+                    <h3 class="mb-4">Adres</h3>
+                    <p>@Model.IletisimAdres</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box p-4 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-phone2"></span>
+                    </div>
+                    <h3 class="mb-4">İletişim Numarası</h3>
+                    <p><a href="tel://@Model.İletisimNumara">+ @Model.İletisimNumara</a></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box p-4 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-paper-plane"></span>
+                    </div>
+                    <h3 class="mb-4">@Model.İletisimMail</h3>
+                    <p><a href="mailto:@Model.İletisimMail">@Model.İletisimMail</a></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box p-4 text-center">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="icon-globe"></span>
+                    </div>
+                    <h3 class="mb-4">Website</h3>
+                    <p><a href="#">@Model.İletisimMail</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters block-9">
+            <div class="col-md-6 order-md-last d-flex">
+
+                @using (Html.BeginForm("iletisimEkle", "Home", FormMethod.Post))
+                {
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Adınız" name="Isim">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Mail Adresiniz" name="Mail">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Mesajınızın Başlığı" name="Aciklama">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="" cols="30" rows="7" class="form-control" placeholder="Mesajınız" name="Mesaj"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Mesaj Gönder" class="btn btn-primary py-3 px-5">
+                    </div>
+                }
+
+
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <div class="img" style="background-image: url(clark-master/images/about.jpg);"></div>
+            </div>
+        </div>
+    </div>
+</section>

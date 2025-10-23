@@ -1,0 +1,52 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Slider
+
+@{
+    ViewData["Title"] = "SliderEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Slider İçeriğini Düzenle</h1>
+        <p class="page-subtitle">Silder içeriğini düzenleyin</p>
+    </div>
+
+    <div class="card">
+        @using (Html.BeginForm("SliderDuzenle", "Admin", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label class="form-label">ID</label>
+                @Html.TextBoxFor(x => x.SliderId, new { @class = "form-input", @readonly="readonly" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Başlık</label>
+                @Html.TextBoxFor(x => x.TopTitle, new { @class = "form-input", placeholder = "Slider başlığını girin" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">İçerik</label>
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-input", placeholder = "Slider İçeriğini girin" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Alt Başlık</label>
+                @Html.TextBoxFor(x => x.Subtitle, new { @class = "form-input", placeholder = "Slider Alt başlığını girin" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Resim</label>
+                @Html.TextBoxFor(x => x.Resim, new { @class = "form-input", placeholder = "Slider görlsei girin" })
+            </div>
+
+            <div class="form-actions">
+                <a href="/Admin/Slider" class="btn btn-secondary">İptal</a>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        }
+    </div>
+</main>
+</div>
+

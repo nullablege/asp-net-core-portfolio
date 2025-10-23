@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim Mesajları - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html" class="active"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">İletişim Mesajları</h1>
+        <p class="page-subtitle">Gelen mesajları görüntüleyin ve yönetin</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Mesaj Listesi</h2>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Ad Soyad</th>
+                <th>E-posta</th>
+                <th>Telefon</th>
+                <th>Mesaj</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ahmet Yılmaz</td>
+                <td>ahmet@example.com</td>
+                <td>+90 555 123 4567</td>
+                <td>Merhaba, proje hakkında bilgi almak istiyorum...</td>
+                <td>23.10.2025 14:30</td>
+                <td><span class="badge badge-warning">Okunmadı</span></td>
+                <td class="table-actions">
+                  <button class="btn btn-secondary btn-sm" onclick="openModal('viewModal')">Görüntüle</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Ayşe Demir</td>
+                <td>ayse@example.com</td>
+                <td>+90 555 234 5678</td>
+                <td>Web sitesi tasarımı için teklif alabilir miyim?</td>
+                <td>22.10.2025 10:15</td>
+                <td><span class="badge badge-success">Okundu</span></td>
+                <td class="table-actions">
+                  <button class="btn btn-secondary btn-sm" onclick="openModal('viewModal')">Görüntüle</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mehmet Kaya</td>
+                <td>mehmet@example.com</td>
+                <td>+90 555 345 6789</td>
+                <td>Portfolyonuzdaki projeleri çok beğendim...</td>
+                <td>21.10.2025 16:45</td>
+                <td><span class="badge badge-success">Okundu</span></td>
+                <td class="table-actions">
+                  <button class="btn btn-secondary btn-sm" onclick="openModal('viewModal')">Görüntüle</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Fatma Şahin</td>
+                <td>fatma@example.com</td>
+                <td>+90 555 456 7890</td>
+                <td>E-ticaret projesi için görüşmek isterim.</td>
+                <td>20.10.2025 09:20</td>
+                <td><span class="badge badge-warning">Okunmadı</span></td>
+                <td class="table-actions">
+                  <button class="btn btn-secondary btn-sm" onclick="openModal('viewModal')">Görüntüle</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Ali Öztürk</td>
+                <td>ali@example.com</td>
+                <td>+90 555 567 8901</td>
+                <td>Mobil uygulama geliştirme konusunda yardım...</td>
+                <td>19.10.2025 13:00</td>
+                <td><span class="badge badge-success">Okundu</span></td>
+                <td class="table-actions">
+                  <button class="btn btn-secondary btn-sm" onclick="openModal('viewModal')">Görüntüle</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- View Modal -->
+  <div class="modal" id="viewModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Mesaj Detayı</h3>
+        <button class="modal-close" onclick="closeModal('viewModal')">&times;</button>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <div class="form-group">
+          <label class="form-label">Ad Soyad</label>
+          <p style="color: var(--text-secondary);">Ahmet Yılmaz</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-posta</label>
+          <p style="color: var(--text-secondary);">ahmet@example.com</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Telefon</label>
+          <p style="color: var(--text-secondary);">+90 555 123 4567</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tarih</label>
+          <p style="color: var(--text-secondary);">23.10.2025 14:30</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mesaj</label>
+          <p style="color: var(--text-secondary); line-height: 1.6;">
+            Merhaba, web sitenizde gördüğüm e-ticaret projesi hakkında detaylı bilgi almak istiyorum. 
+            Benzer bir proje için sizinle çalışmak isterim. Müsait olduğunuz bir zamanda görüşebilir miyiz?
+          </p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Durum</label>
+          <span class="badge badge-warning">Okunmadı</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" onclick="confirmDelete()">Sil</button>
+        <button type="button" class="btn btn-primary" onclick="markAsRead()">Okundu Olarak İşaretle</button>
+        <button type="button" class="btn btn-secondary" onclick="closeModal('viewModal')">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

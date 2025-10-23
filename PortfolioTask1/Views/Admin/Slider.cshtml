@@ -1,0 +1,56 @@
+﻿@using PortfolioTask1.Models.Entities
+@model List<Slider>
+
+@{
+    ViewData["Title"] = "Slider";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Slider</h1>
+        <p class="page-subtitle">Ana sayfa slider görsellerini yönetin</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Slider Görselleri</h2>
+            <!-- Changed button to link to separate add page -->
+            <a href="/Admin/SliderEkle" class="btn btn-primary">Yeni Slider Ekle</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Alt Başlık</th>
+                        <th>Görsel URL</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.TopTitle</td>
+                            <td>@x.Title</td>
+                            <td>@x.Subtitle</td>
+                            <td>@x.Resim</td>
+                            <td class="table-actions">
+                                <!-- Changed button to link to separate edit page -->
+                                <a href="/Admin/SliderDuzenle/@x.SliderId" class="btn btn-secondary btn-sm">Düzenle</a>
+                                <a href="/Admin/SliderSil/@x.SliderId" class="btn btn-danger btn-sm">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</div>
+

@@ -1,0 +1,89 @@
+﻿@using PortfolioTask1.Models.Entities
+@model RegisterViewModel
+
+@{
+    // Bu sayfa, admin panelinin (_AdminLayout) veya sitenin ana layout'unu (_Layout) KULLANMAMALI.
+    // Kendi başına bir sayfa olmalı (login sayfası gibi).
+    Layout = null;
+    ViewData["Title"] = "İlk Admin Kaydı";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/admin/styles/main.css" />
+
+    <style>
+        .form-error-message {
+            color: #d9534f; /* Kırmızı renk */
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .form-error-summary ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            background-color: #f2dede;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1 class="login-logo">Admin Kayıt</h1>
+                <p class="login-subtitle">İlk admin kullanıcısını oluşturun</p>
+            </div>
+
+            <form class="login-form"
+                  asp-controller="Admin"
+                  asp-action="Register"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly" class="form-error-summary"></div>
+
+
+                <div class="form-group">
+                    <label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+                    <input asp-for="UserName" class="form-input" placeholder="Kullanıcı adınızı girin" />
+                    <span asp-validation-for="UserName" class="form-error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">E-posta Adresi</label>
+                    <input asp-for="Email" class="form-input" placeholder="E-posta adresinizi girin" />
+                    <span asp-validation-for="Email" class="form-error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="form-label">Şifre</label>
+                    <input asp-for="Password" class="form-input" placeholder="Şifrenizi girin" />
+                    <span asp-validation-for="Password" class="form-error-message"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydı Oluştur</button>
+            </form>
+
+            <div class="login-footer">
+                <p>&copy; 2025 Admin Panel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

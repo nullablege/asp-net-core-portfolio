@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projelerim - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html" class="active"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Projelerim</h1>
+        <p class="page-subtitle">Portfolyonuzdaki projeleri yönetin</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Proje Listesi</h2>
+          <!-- Changed button to link to separate add page -->
+          <a href="projeler-ekle.html" class="btn btn-primary">Yeni Proje Ekle</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Proje Adı</th>
+                <th>Kategori</th>
+                <th>Teknolojiler</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>E-Ticaret Platformu</td>
+                <td>Web Geliştirme</td>
+                <td>React, Node.js, MongoDB</td>
+                <td>15.10.2025</td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+                <td class="table-actions">
+                  <!-- Changed button to link to separate edit page -->
+                  <a href="projeler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mobil Uygulama Tasarımı</td>
+                <td>UI/UX Design</td>
+                <td>Figma, Adobe XD</td>
+                <td>10.10.2025</td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+                <td class="table-actions">
+                  <a href="projeler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kurumsal Web Sitesi</td>
+                <td>Web Geliştirme</td>
+                <td>Next.js, Tailwind CSS</td>
+                <td>05.10.2025</td>
+                <td><span class="badge badge-warning">Devam Ediyor</span></td>
+                <td class="table-actions">
+                  <a href="projeler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Blog Platformu</td>
+                <td>Web Geliştirme</td>
+                <td>WordPress, PHP</td>
+                <td>28.09.2025</td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+                <td class="table-actions">
+                  <a href="projeler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

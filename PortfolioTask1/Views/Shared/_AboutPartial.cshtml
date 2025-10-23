@@ -1,0 +1,42 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Hakkimda
+
+<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-md-6 col-lg-5 d-flex">
+                <div class="img-about img d-flex align-items-stretch">
+                    <div class="overlay"></div>
+                    <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(@Model.resim);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+                <div class="row justify-content-start pb-3">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <h1 class="big">Hakkimda</h1>
+                        <h2 class="mb-4">Benim Hakkımda</h2>
+                        <p>@Model.aciklama</p>
+                        <ul class="about-info mt-4 px-md-0 px-2">
+                            <li class="d-flex"><span>İsim :</span> <span>@Model.ad</span></li>
+                            <li class="d-flex"><span>Doğum Tarihi :</span> <span>@Model.DogumTarihi</span></li>
+                            <li class="d-flex"><span>Adres :</span> <span>@Model.Adres</span></li>
+                            <li class="d-flex"><span>Posta Kodu :</span> <span>@Model.PostaKodu</span></li>
+                            <li class="d-flex"><span>Mail :</span> <span>@Model.Mail</span></li>
+                            <li class="d-flex"><span>Telefon : </span> <span>@Model.Telefon</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                    <div class="text">
+                        <p class="mb-4">
+                            <span class="number" data-number="@Model.ProjeSayısı">0</span>
+                            <span>Proje Tamamladım</span>
+                        </p>
+                        <p><a href="#" class="btn btn-primary py-3 px-3">Cvmi İndir</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

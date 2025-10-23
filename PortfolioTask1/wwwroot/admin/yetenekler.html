@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeteneklerim - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html" class="active"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Yeteneklerim</h1>
+        <p class="page-subtitle">Beceri ve yeteneklerinizi yönetin</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Yetenek Listesi</h2>
+          <!-- Changed button to link to separate add page -->
+          <a href="yetenekler-ekle.html" class="btn btn-primary">Yeni Yetenek Ekle</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Yetenek Adı</th>
+                <th>Kategori</th>
+                <th>Seviye (%)</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>JavaScript</td>
+                <td>Programlama Dili</td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 95%; height: 100%; background: var(--accent-gold);"></div>
+                    </div>
+                    <span>95%</span>
+                  </div>
+                </td>
+                <td class="table-actions">
+                  <!-- Changed button to link to separate edit page -->
+                  <a href="yetenekler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>React</td>
+                <td>Framework</td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 90%; height: 100%; background: var(--accent-gold);"></div>
+                    </div>
+                    <span>90%</span>
+                  </div>
+                </td>
+                <td class="table-actions">
+                  <a href="yetenekler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Node.js</td>
+                <td>Backend</td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 85%; height: 100%; background: var(--accent-gold);"></div>
+                    </div>
+                    <span>85%</span>
+                  </div>
+                </td>
+                <td class="table-actions">
+                  <a href="yetenekler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>UI/UX Design</td>
+                <td>Tasarım</td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 80%; height: 100%; background: var(--accent-gold);"></div>
+                    </div>
+                    <span>80%</span>
+                  </div>
+                </td>
+                <td class="table-actions">
+                  <a href="yetenekler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>MongoDB</td>
+                <td>Veritabanı</td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                      <div style="width: 75%; height: 100%; background: var(--accent-gold);"></div>
+                    </div>
+                    <span>75%</span>
+                  </div>
+                </td>
+                <td class="table-actions">
+                  <a href="yetenekler-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

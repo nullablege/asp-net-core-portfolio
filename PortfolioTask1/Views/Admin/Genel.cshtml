@@ -1,0 +1,84 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Genel
+@{
+    ViewData["Title"] = "Genel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Genel Ayarlar</h1>
+        <p class="page-subtitle">Web sitenizin genel bilgilerini düzenleyin</p>
+    </div>
+
+    <div class="card">
+        @using(Html.BeginForm("Genel", "Admin", FormMethod.Post))
+        {
+
+            <div class="form-group" style="display:none" >
+                <label class="form-label">Ödül Sayısı </label>
+                @Html.TextBoxFor(x => x.GenelId, new { @class = "form-input", @readonly="readonly" })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Ödül Sayısı </label>
+                @Html.TextBoxFor(x => x.OdulSayisi, new {@class="form-input", placeholder="Ödül Sayınızı Giriniz."} )
+            </div>
+            <div class="form-group">
+                <label class="form-label">Biten Proje Sayısı </label>
+                @Html.TextBoxFor(x => x.BitenProjeSayisi, new { @class = "form-input", placeholder = "Biten Proje Sayınızı Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Mutlu Müşteri Sayısı </label>
+                @Html.TextBoxFor(x => x.MutluMusteriSayisi, new { @class = "form-input", placeholder = "Mutlu Mülteri Sayısını Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Kahve Sayısı </label>
+                @Html.TextBoxFor(x => x.KahveSayisi, new { @class = "form-input", placeholder = "Kahve Sayısını Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">FCTO Title  </label>
+                @Html.TextBoxFor(x => x.FctoTitle, new { @class = "form-input", placeholder = "FCTO Title Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">FCTO Subtitle  </label>
+                @Html.TextBoxFor(x => x.FctoSubtitle, new { @class = "form-input", placeholder = "FCTO Subtitle Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">İletişim Adres  </label>
+                @Html.TextBoxFor(x => x.IletisimAdres, new { @class = "form-input", placeholder = "İletişim Adres Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">İletişim Numara  </label>
+                @Html.TextBoxFor(x => x.İletisimNumara, new { @class = "form-input", placeholder = "İletişim Numara Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">İletişim Mail  </label>
+                @Html.TextBoxFor(x => x.İletisimMail, new { @class = "form-input", placeholder = "İletişim Mail Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">İletişim Website  </label>
+                @Html.TextBoxFor(x => x.İletisimWebsite, new { @class = "form-input", placeholder = "İletişim Website Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Twitter URL  </label>
+                @Html.TextBoxFor(x => x.Twitter, new { @class = "form-input", placeholder = "Twitter URL Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Facebook URL  </label>
+                @Html.TextBoxFor(x => x.Facebook, new { @class = "form-input", placeholder = "Facebook URL Giriniz." })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Instagram URL  </label>
+                @Html.TextBoxFor(x => x.İnstagram, new { @class = "form-input", placeholder = "Instagram URL Giriniz." })
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        }
+    </div>
+</main>
+</div>
+

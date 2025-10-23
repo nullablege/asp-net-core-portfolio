@@ -1,0 +1,112 @@
+﻿@using PortfolioTask1.Models.ViewModels
+@model AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Portfolyo yönetim panelinize hoş geldiniz</p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label">Toplam Proje</div>
+            <div class="stat-value">@Model.projeSayisi</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Yetenekler</div>
+            <div class="stat-value">@Model.yetenekSayisi</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Yeni Mesajlar</div>
+            <div class="stat-value">@Model.okunmamisMesajSayisi</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Slider Görselleri</div>
+            <div class="stat-value">@Model.sliderSayisi</div>
+        </div>
+    </div>
+
+    <!-- Recent Messages -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Son Mesajlar</h2>
+            <a href="iletisim.html" class="btn btn-secondary btn-sm">Tümünü Gör</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ad Soyad</th>
+                        <th>E-posta</th>
+                        <th>Mesaj</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.sonMesajlar)
+                    {
+                        <tr>
+                            <td>@x.Isim</td>
+                            <td>@x.Mail</td>
+                            <td>@x.Aciklama</td>
+                            <td>@x.Tarih</td>
+                            <td>
+                                @if (x.Goruldu == false)
+                                {
+                                    <span class="badge badge-warning">Okunmadı</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-success">Okundu</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Recent Projects -->
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Son Projeler</h2>
+            <a href="projeler.html" class="btn btn-secondary btn-sm">Tümünü Gör</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proje Adı</th>
+                        <th>Kategori</th>
+                        <th>Proje Boyutu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.sonProjeler)
+                    {
+                        <tr>
+                            <td>@x.ProjeBaslik</td>
+                            <td>@x.ProjeSinifi</td>
+                            <td>@x.ProjeBoyutu</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</div>
+
+

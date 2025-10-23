@@ -1,0 +1,30 @@
+﻿@using PortfolioTask1.Models.Entities
+@model List<Projelerim>
+
+<section class="ftco-section ftco-project" id="projects-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Projelerim</h1>
+                <h2 class="mb-4">Projeler</h2>
+                <p>Referansım olan projeler.</p>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach(var x in Model)
+            {
+                <div class="col-md-@x.ProjeBoyutu">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(@x.ProjeResim);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="#">@x.ProjeBaslik</a></h3>
+                            <span>@x.ProjeSinifi</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

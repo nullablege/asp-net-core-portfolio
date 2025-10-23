@@ -1,0 +1,76 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Hakkimda
+
+@{
+    ViewData["Title"] = "Hakkimda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Hakkımda</h1>
+        <p class="page-subtitle">Kendiniz hakkında bilgileri düzenleyin</p>
+    </div>
+
+    <div class="card">
+        @using(Html.BeginForm("Hakkimda", "Admin", FormMethod.Post))
+        {
+            <div class="form-group" style="display:none">
+                <label class="form-label">Ödül Sayısı </label>
+                @Html.TextBoxFor(x => x.HakkimdaId, new { @class = "form-input", @readonly = "readonly" })
+            </div>
+            <div class="form-group">
+                <label class="form-label">Ad Soyad</label>
+                @Html.TextBoxFor(x => x.ad, new {@class="form-input", placeholder="Adınızı ve soyadınızı girin"})
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Doğum Tarihi</label>
+                @Html.TextBoxFor(x => x.DogumTarihi, new { @class = "form-input", placeholder = "Doğum Tarihinizi girin. " })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Açıklama</label>
+                @Html.TextBoxFor(x => x.aciklama, new { @class = "form-input", placeholder = "Lütfen açıklama girin." })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Resim URL</label>
+                @Html.TextBoxFor(x => x.resim, new { @class = "form-input", placeholder = "Resim Dosya yolu veya URL girin." })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Proje Sayisi</label>
+                @Html.TextBoxFor(x => x.ProjeSayısı, new { @class = "form-input", placeholder = "Proje sayisi girin." })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Telefon Numarası</label>
+                @Html.TextBoxFor(x => x.Telefon, new { @class = "form-input", placeholder = "Telefon numarası girin." })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Mail Adresi</label>
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-input", placeholder = "Mail Adresinizi Girin" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Posta Kodu</label>
+                @Html.TextBoxFor(x => x.PostaKodu, new { @class = "form-input", placeholder = "Posta Kodunuzu Girin" })
+            </div>
+
+
+            <div class="form-group">
+                <label class="form-label">Adres</label>
+                @Html.TextBoxFor(x => x.Adres, new { @class = "form-input", placeholder = "Adresinizi Girin" })
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        }
+    </div>
+</main>
+</div>
+

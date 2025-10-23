@@ -1,0 +1,74 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Ozgecmis
+@{
+    ViewData["Title"] = "OzgecmisDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Özgeçmiş Kaydını Düzenle</h1>
+        <p class="page-subtitle">Eğitim veya iş deneyiminizi Düzenleyin </p>
+    </div>
+
+    <div class="card">
+
+        @using (Html.BeginForm("OzgecmisDuzenle", "Admin", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>ID</label>
+                @Html.TextBoxFor(x => x.OzgecmisId, new { @class = "form-input", placeholder = "Örn : 2015 - 2016 ", @readonly="readonly"})
+            </div>
+
+            <div class="form-group">
+                <label>Eğitim Tarihi</label>
+                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-input", placeholder = "Örn : 2015 - 2016 " })
+            </div>
+
+            <div class="form-group">
+                <label>Eğitim Seviesi</label>
+                @Html.TextBoxFor(x => x.Seviye, new { @class = "form-input", placeholder = "Örn : Lisans " })
+            </div>
+
+            <div class="form-group">
+                <label>Eğitim Kurumu</label>
+                @Html.TextBoxFor(x => x.Kurum, new { @class = "form-input", placeholder = "Örn : Doğu Akdeniz Üniversitesi " })
+            </div>
+
+
+
+            <div class="form-group">
+                <label>Açıklama</label>
+                @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-textarea", placeholder = "Örn : Lisans " })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Tür</label>
+                <select class="form-select" name="Tip">
+                    @if(Model.Tip == "egitim")
+                    {
+                        <option value="egitim" selected>Eğitim</option>
+                        <option value="is">İş Deneyimi</option>
+                    }
+                    else
+                    {
+                        <option value="egitim">Eğitim</option>
+                        <option value="is" selected>İş Deneyimi</option>
+                    }
+
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <a href="/Admin/Ozgecmis" class="btn btn-secondary">İptal</a>
+                <button type="submit" class="btn btn-primary">Düzenle</button>
+            </div>
+        }
+
+    </div>
+</main>
+</div>
+
+
+

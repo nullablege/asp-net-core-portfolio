@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html" class="active"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Portfolyo yönetim panelinize hoş geldiniz</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Toplam Proje</div>
+          <div class="stat-value">12</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Yetenekler</div>
+          <div class="stat-value">8</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Yeni Mesajlar</div>
+          <div class="stat-value">5</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Slider Görselleri</div>
+          <div class="stat-value">4</div>
+        </div>
+      </div>
+
+      <!-- Recent Messages -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Son Mesajlar</h2>
+          <a href="iletisim.html" class="btn btn-secondary btn-sm">Tümünü Gör</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Ad Soyad</th>
+                <th>E-posta</th>
+                <th>Mesaj</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ahmet Yılmaz</td>
+                <td>ahmet@example.com</td>
+                <td>Merhaba, proje hakkında bilgi almak istiyorum...</td>
+                <td>23.10.2025</td>
+                <td><span class="badge badge-warning">Okunmadı</span></td>
+              </tr>
+              <tr>
+                <td>Ayşe Demir</td>
+                <td>ayse@example.com</td>
+                <td>Web sitesi tasarımı için teklif alabilir miyim?</td>
+                <td>22.10.2025</td>
+                <td><span class="badge badge-success">Okundu</span></td>
+              </tr>
+              <tr>
+                <td>Mehmet Kaya</td>
+                <td>mehmet@example.com</td>
+                <td>Portfolyonuzdaki projeleri çok beğendim...</td>
+                <td>21.10.2025</td>
+                <td><span class="badge badge-success">Okundu</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Recent Projects -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Son Projeler</h2>
+          <a href="projeler.html" class="btn btn-secondary btn-sm">Tümünü Gör</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Proje Adı</th>
+                <th>Kategori</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>E-Ticaret Platformu</td>
+                <td>Web Geliştirme</td>
+                <td>15.10.2025</td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+              </tr>
+              <tr>
+                <td>Mobil Uygulama Tasarımı</td>
+                <td>UI/UX Design</td>
+                <td>10.10.2025</td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+              </tr>
+              <tr>
+                <td>Kurumsal Web Sitesi</td>
+                <td>Web Geliştirme</td>
+                <td>05.10.2025</td>
+                <td><span class="badge badge-warning">Devam Ediyor</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

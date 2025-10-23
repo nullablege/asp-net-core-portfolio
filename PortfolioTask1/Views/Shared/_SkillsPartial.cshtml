@@ -1,0 +1,31 @@
+﻿@using PortfolioTask1.Models.Entities
+@model List<Yeteneklerim>
+
+<section class="ftco-section" id="skills-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Yetenekler</h1>
+                <h2 class="mb-4">Benim Yeteneklerim</h2>
+                <p>Yeteneklerim ve Seviyeleri </p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach(var x in Model)
+            {
+                <div class="col-md-6 animate-box">
+                    <div class="progress-wrap ftco-animate">
+                        <h3>@x.YetenekAdi</h3>
+                        <div class="progress">
+                            <div class="progress-bar color-1" role="progressbar" aria-valuenow="@x.YetenekSeviyesi"
+                                 aria-valuemin="0" aria-valuemax="100" style="width:@x.YetenekSeviyesi%">
+                                <span>@x.YetenekSeviyesi%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</section>

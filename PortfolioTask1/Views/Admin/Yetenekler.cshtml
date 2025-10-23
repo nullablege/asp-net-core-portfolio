@@ -1,0 +1,57 @@
+﻿@using PortfolioTask1.Models.Entities
+@model List<Yeteneklerim>
+
+
+@{
+    ViewData["Title"] = "Yetenekler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Yeteneklerim</h1>
+        <p class="page-subtitle">Beceri ve yeteneklerinizi yönetin</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Yetenek Listesi</h2>
+            <!-- Changed button to link to separate add page -->
+            <a href="yetenekler-ekle.html" class="btn btn-primary">Yeni Yetenek Ekle</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Yetenek Adı</th>
+                        <th>Seviye (%)</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var x in Model)
+                    {
+                        <tr>
+                            <td>@x.YetenekAdi</td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <div style="flex: 1; height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden;">
+                                        <div style="width: @x.YetenekSeviyesi%; height: 100%; background: var(--accent-gold);"></div>
+                                    </div>
+                                    <span>@x.YetenekSeviyesi%</span>
+                                </div>
+                            </td>
+                            <td class="table-actions">
+                                <!-- Changed button to link to separate edit page -->
+                                <a href="/Admin/YetenekDuzenle/@x.YeteneklerimId" class="btn btn-secondary btn-sm">Düzenle</a>
+                                <a href="/Admin/YetenekSil/@x.YeteneklerimId" class="btn btn-danger btn-sm">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</div>
+

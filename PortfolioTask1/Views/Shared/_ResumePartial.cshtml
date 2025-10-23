@@ -1,0 +1,53 @@
+﻿@using PortfolioTask1.Models.Entities
+@model List<Ozgecmis>
+
+<section class="ftco-section ftco-no-pb" id="resume-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-10 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Özgeçmiş""</h1>
+                <h2 class="mb-4">Özgeçmiş</h2>
+                <p>Çalıştığım kurumlar ve okuduğum okullar.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @foreach(var x in Model)
+                {
+                    if(x.Tip == "egitim")
+                    {
+                        <div class="resume-wrap ftco-animate">
+                            <span class="date">@x.Tarih</span>
+                            <h2>@x.Seviye</h2>
+                            <span class="position">@x.Kurum</span>
+                            <p class="mt-4">@x.Aciklama</p>
+                        </div>
+                    }
+
+                }
+
+            </div>
+
+            <div class="col-md-6">
+                @foreach(var y in Model)
+                {
+                    if(y.Tip == "egitim")
+                    {
+                        <div class="resume-wrap ftco-animate">
+                            <span class="date">@y.Tarih</span>
+                            <h2>@y.Seviye</h2>
+                            <span class="position">@y.Kurum</span>
+                            <p class="mt-4">@y.Aciklama</p>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 text-center ftco-animate">
+                <p><a href="#" class="btn btn-primary py-4 px-5">Cvmi İndir</a></p>
+            </div>
+        </div>
+    </div>
+</section>

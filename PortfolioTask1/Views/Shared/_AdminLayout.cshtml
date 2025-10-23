@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Admin Panel</title>
+    <link rel="stylesheet" href="~/admin/styles/main.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <a href="index.html" class="navbar-logo">Admin Panel</a>
+            <div class="navbar-right">
+                <button class="btn-logout"><a href="/Admin/Logout">Çıkış Yap</a></button>
+            </div>
+        </nav>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="/Admin/" class="@(ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")" ><span class="icon">📊</span> Dashboard</a></li>
+                <li><a href="/Admin/Genel" class="@(ViewContext.RouteData.Values["action"].ToString() == "Genel" ? "active" : "")"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+                <li><a href="/Admin/Hakkimda" class="@(ViewContext.RouteData.Values["action"].ToString() == "Hakkimda" ? "active" : "")"><span class="icon">👤</span> Hakkımda</a></li>
+                <li><a href="/Admin/Ozgecmis" class="@(ViewContext.RouteData.Values["action"].ToString() == "Ozgecmis" ? "active" : "")"><span class="icon">📄</span> Özgeçmiş</a></li>
+                <li><a href="/Admin/Projeler" class="@(ViewContext.RouteData.Values["action"].ToString() == "Projeler" ? "active" : "")"><span class="icon">💼</span> Projelerim</a></li>
+                <li><a href="/Admin/Yetenekler" class="@(ViewContext.RouteData.Values["action"].ToString() == "Yetenekler" ? "active" : "")"><span class="icon">⭐</span> Yeteneklerim</a></li>
+                <li><a href="/Admin/Iletisim" class="@(ViewContext.RouteData.Values["action"].ToString() == "Iletisim" ? "active" : "")"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+                <li><a href="/Admin/Slider" class="@(ViewContext.RouteData.Values["action"].ToString() == "Slider" ? "active" : "")"><span class="icon">🖼️</span> Slider</a></li>
+            </ul>
+        </aside>
+
+
+        @RenderBody()
+
+        <script src="~/admin/scripts/main.js"></script>
+</body>
+</html>

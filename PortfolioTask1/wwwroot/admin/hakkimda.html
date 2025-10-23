@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hakkımda - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html" class="active"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Hakkımda</h1>
+        <p class="page-subtitle">Kendiniz hakkında bilgileri düzenleyin</p>
+      </div>
+
+      <div class="card">
+        <form>
+          <div class="form-group">
+            <label class="form-label">Ad Soyad</label>
+            <input type="text" class="form-input" value="Ahmet Yılmaz" placeholder="Adınızı ve soyadınızı girin">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Ünvan</label>
+            <input type="text" class="form-input" value="Full Stack Developer" placeholder="Ünvanınızı girin">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Profil Fotoğrafı URL</label>
+            <input type="url" class="form-input" value="https://example.com/profile.jpg" placeholder="Profil fotoğrafı URL'sini girin">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Kısa Açıklama</label>
+            <textarea class="form-textarea" placeholder="Kendiniz hakkında kısa bir açıklama yazın">Merhaba! Ben Ahmet Yılmaz. 5 yıldır web geliştirme alanında çalışıyorum. Modern web teknolojileri ile kullanıcı dostu ve performanslı web siteleri geliştiriyorum.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Detaylı Açıklama</label>
+            <textarea class="form-textarea" style="min-height: 200px;" placeholder="Kendiniz hakkında detaylı bilgi verin">Web geliştirme tutkusuyla başladığım bu yolculukta, React, Node.js, ve modern web teknolojileri konusunda uzmanlaştım. Müşteri memnuniyetini ön planda tutarak, her projede en iyi sonucu elde etmek için çalışıyorum.
+
+Şimdiye kadar 50'den fazla projeye imza attım ve birçok mutlu müşteri kazandım. E-ticaret platformlarından kurumsal web sitelerine kadar geniş bir yelpazede deneyimim bulunmaktadır.</textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Doğum Tarihi</label>
+            <input type="date" class="form-input" value="1995-05-15">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Şehir</label>
+            <input type="text" class="form-input" value="İstanbul" placeholder="Şehrinizi girin">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Deneyim Yılı</label>
+            <input type="number" class="form-input" value="5" placeholder="Deneyim yılınızı girin">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

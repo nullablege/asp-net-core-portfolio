@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeni Slider Ekle - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html" class="active"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Yeni Slider Görseli Ekle</h1>
+        <p class="page-subtitle">Ana sayfaya yeni slider görseli ekleyin</p>
+      </div>
+
+      <div class="card">
+        <form>
+          <div class="form-group">
+            <label class="form-label">Başlık</label>
+            <input type="text" class="form-input" placeholder="Slider başlığını girin">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Alt Başlık</label>
+            <input type="text" class="form-input" placeholder="Slider alt başlığını girin">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Görsel URL</label>
+            <input type="url" class="form-input" placeholder="https://example.com/image.jpg">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Buton Metni</label>
+            <input type="text" class="form-input" placeholder="Örn: Daha Fazla Bilgi">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Buton Linki</label>
+            <input type="url" class="form-input" placeholder="https://example.com/page">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sıra</label>
+            <input type="number" class="form-input" min="1" placeholder="Gösterim sırasını girin">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Durum</label>
+            <select class="form-select">
+              <option value="aktif">Aktif</option>
+              <option value="pasif">Pasif</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <a href="slider.html" class="btn btn-secondary">İptal</a>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

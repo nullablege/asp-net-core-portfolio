@@ -1,0 +1,103 @@
+﻿@model PortfolioTask1.Models.ViewModels.LoginViewModel
+
+@{
+
+    Layout = null;
+    ViewData["Title"] = "Giriş Yap - Admin Panel";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/admin/styles/main.css" />
+
+    <style>
+        .form-error-message {
+            color: #d9534f; 
+            font-size: 0.9em;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .form-error-summary ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            background-color: #f2dede;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 8px; 
+            margin-bottom: 15px;
+        }
+        .form-check .form-label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        .form-check .form-check-input {
+            width: auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1 class="login-logo">Admin Panel</h1>
+                <p class="login-subtitle">Devam etmek için giriş yapın</p>
+            </div>
+
+            <form class="login-form"
+                  asp-controller="Admin"
+                  asp-action="Login"
+                  asp-route-returnurl="@ViewData["ReturnUrl"]"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly" class="form-error-summary"></div>
+
+
+                <div class="form-group">
+                    <label asp-for="UserName" class="form-label">Kullanıcı Adı</label>
+                    <input asp-for="UserName" class="form-input" placeholder="Kullanıcı adınızı girin" />
+
+                    <span asp-validation-for="UserName" class="form-error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="form-label">Şifre</label>
+                    <input asp-for="Password" class="form-input" placeholder="Şifrenizi girin" />
+                    <span asp-validation-for="Password" class="form-error-message"></span>
+                </div>
+
+                <div class="form-group form-check">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-label">Beni Hatırla</label>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+
+            <div class="login-footer">
+                <p>&copy; 2025 Admin Panel. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

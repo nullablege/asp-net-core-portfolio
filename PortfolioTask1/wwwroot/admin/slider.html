@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider - Admin Panel</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <a href="index.html" class="navbar-logo">Admin Panel</a>
+      <div class="navbar-right">
+        <button class="btn-logout">Çıkış Yap</button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+        <li><a href="genel.html"><span class="icon">⚙️</span> Genel Ayarlar</a></li>
+        <li><a href="hakkimda.html"><span class="icon">👤</span> Hakkımda</a></li>
+        <li><a href="ozgecmis.html"><span class="icon">📄</span> Özgeçmiş</a></li>
+        <li><a href="projeler.html"><span class="icon">💼</span> Projelerim</a></li>
+        <li><a href="yetenekler.html"><span class="icon">⭐</span> Yeteneklerim</a></li>
+        <li><a href="iletisim.html"><span class="icon">✉️</span> İletişim Mesajları</a></li>
+        <li><a href="slider.html" class="active"><span class="icon">🖼️</span> Slider</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-header">
+        <h1 class="page-title">Slider</h1>
+        <p class="page-subtitle">Ana sayfa slider görsellerini yönetin</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Slider Görselleri</h2>
+          <!-- Changed button to link to separate add page -->
+          <a href="slider-ekle.html" class="btn btn-primary">Yeni Görsel Ekle</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Başlık</th>
+                <th>Alt Başlık</th>
+                <th>Görsel URL</th>
+                <th>Sıra</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hoş Geldiniz</td>
+                <td>Profesyonel Web Çözümleri</td>
+                <td>https://example.com/slider1.jpg</td>
+                <td>1</td>
+                <td><span class="badge badge-success">Aktif</span></td>
+                <td class="table-actions">
+                  <!-- Changed button to link to separate edit page -->
+                  <a href="slider-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Modern Tasarımlar</td>
+                <td>Kullanıcı Deneyimi Odaklı</td>
+                <td>https://example.com/slider2.jpg</td>
+                <td>2</td>
+                <td><span class="badge badge-success">Aktif</span></td>
+                <td class="table-actions">
+                  <a href="slider-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Yenilikçi Projeler</td>
+                <td>Teknoloji ile Geleceği Şekillendirin</td>
+                <td>https://example.com/slider3.jpg</td>
+                <td>3</td>
+                <td><span class="badge badge-danger">Pasif</span></td>
+                <td class="table-actions">
+                  <a href="slider-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Başarı Hikayeleri</td>
+                <td>Müşteri Memnuniyeti Önceliğimiz</td>
+                <td>https://example.com/slider4.jpg</td>
+                <td>4</td>
+                <td><span class="badge badge-success">Aktif</span></td>
+                <td class="table-actions">
+                  <a href="slider-duzenle.html" class="btn btn-secondary btn-sm">Düzenle</a>
+                  <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Sil</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@using PortfolioTask1.Models.Entities
+@model Yeteneklerim
+
+@{
+    ViewData["Title"] = "YetenekDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="page-header">
+        <h1 class="page-title">Yeni Yetenek Ekle</h1>
+        <p class="page-subtitle">Yeni beceri veya yetenek ekleyin</p>
+    </div>
+
+    <div class="card">
+        @using (Html.BeginForm("YetenekDuzenle", "Admin", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label class="form-label">ID </label>
+                @Html.TextBoxFor(x => x.YeteneklerimId, new { @class = "form-input", @readonly="readonly"})
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Yetenek Adı</label>
+                @Html.TextBoxFor(x => x.YetenekAdi, new { @class = "form-input", placeholder = "Örn: JavaScript, React, Photoshop" })
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Seviye (<output id="output">50</output>%)</label>
+                @Html.TextBoxFor(x => x.YetenekSeviyesi, new { type = "range", min = "0", max = "100", @class = "form-range", oninput = "output.value = this.value" })
+
+            </div>
+
+            <div class="form-actions">
+                <a href="/Admin/Yetenekler" class="btn btn-secondary">İptal</a>
+                <button type="submit" class="btn btn-primary">Yetenek Düzenle</button>
+            </div>
+        }
+    </div>
+</main>
+</div>
+
